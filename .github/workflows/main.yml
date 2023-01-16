@@ -36,4 +36,4 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/somme:latest
       - name: pull image and start container
-        run: docker run -d somme NAME[:TAG|@alicemerveille]
+        run: docker run -d somme
