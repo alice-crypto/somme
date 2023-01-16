@@ -35,5 +35,5 @@ jobs:
           file: ./somme/Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/somme:latest
-      - name: pull image and start container
-        run: docker run -d somme
+      - name: pull image container
+        run: docker image pull NAME[:TAG|@DIGEST] somme
