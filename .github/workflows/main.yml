@@ -38,7 +38,7 @@ jobs:
       - name: pull image
         run: docker run -d -p 80:80 --name somme ${{ secrets.DOCKERHUB_USERNAME }}/somme:latest
       - name: create and run container
-      - uses: addnab/docker-run-action@v4
+        uses: addnab/docker-run-action@v4
         with:
           image: ${{ secrets.DOCKERHUB_USERNAME }}/somme:latest
           run: echo "hello world"
