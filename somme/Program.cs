@@ -5,4 +5,3 @@ b = 5;
 Console.WriteLine(a + b);
 Console.WriteLine(a*b);
 Console.WriteLine(a-b);
-//bbb
