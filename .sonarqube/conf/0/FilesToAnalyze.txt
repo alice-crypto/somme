@@ -1,0 +1,5 @@
+﻿C:\Users\PSE\source\repos\somme\somme\Program.cs
+C:\Users\PSE\source\repos\somme\somme\.filenesting.json
+C:\Users\PSE\source\repos\somme\somme\Dockerfile
+C:\Users\PSE\source\repos\somme\somme\Properties\launchSettings.json
+C:\Users\PSE\source\repos\somme\.dockerignore
