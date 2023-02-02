@@ -27,19 +27,3 @@ jobs:
           path: .\.sonar\scanner
           key: ${{ runner.os }}-sonar-scanner
           restore-keys: ${{ runner.os }}-sonar-scanner
-      - name: Install SonarQube scanner
-        if: steps.cache-sonar-scanner.outputs.cache-hit != 'true'
-        shell: powershell
-        run: |
-          New-Item -Path .\.sonar\scanner -ItemType Directory
-          dotnet tool update dotnet-sonarscanner --tool-path .\.sonar\scanner
-      - name: authenrized
-        run: cmd k/
-      - name: Build and analyze
-        env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
-        shell: powershell
-        run: |
-          .\.sonar\scanner\dotnet-sonarscanner begin /k:"sonarqubetestGithub" /d:sonar.login="{{secrets.SONAR_TOKEN}}"
-          dotnet build
-          .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="{{secrets.SONAR_TOKEN}}"
